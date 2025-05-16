@@ -13,10 +13,10 @@ app.use(express.static(path.join(__dirname,'public')))
 app.set('view engine','ejs')
 app.set('views',path.join(__dirname,'views'))
 app.use(bodyParser.urlencoded({extended: true}))
-
+const bearerToken = process.env.BITLY_TOKEN
 // Add bodyParser
 const config = {
-     headers: {
+    headers: {
         'Authorization': `Bearer ${bearerToken}`,
      }
 }
@@ -27,9 +27,13 @@ app.get("/",(req,res) => {
 
 // POST /shorten route to use Axios & Bitly API
 app.post("/shorten",async (req,res) => {
-    const bearerToken = process.env.BITLY_TOKEN
+
     try {
-        const result = await axios.post(`https://api-ssl.bitly.com/v4/shorten`,config)
+        const result = await axios.post(`https://api-ssl.bitly.com/v4/shorten`,{
+            long_url : longUrl,
+            domain: "bit.ly",
+        },config)
+        res.render("result.ejs")
     } catch (error) {
         console.log(error.response.data);
         res.status(500);

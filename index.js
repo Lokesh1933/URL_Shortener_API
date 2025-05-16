@@ -18,6 +18,7 @@ const bearerToken = process.env.BITLY_TOKEN
 const config = {
     headers: {
         'Authorization': `Bearer ${bearerToken}`,
+        'Content-Type': 'application/json',
      }
 }
 // GET / route to render index.ejs
@@ -27,13 +28,14 @@ app.get("/",(req,res) => {
 
 // POST /shorten route to use Axios & Bitly API
 app.post("/shorten",async (req,res) => {
-
+    const longUrl = req.body.longUrl
     try {
         const result = await axios.post(`https://api-ssl.bitly.com/v4/shorten`,{
             long_url : longUrl,
             domain: "bit.ly",
         },config)
-        res.render("result.ejs")
+        const shortUrl = result.data.link
+        res.render("result",{longUrl,shortUrl})
     } catch (error) {
         console.log(error.response.data);
         res.status(500);

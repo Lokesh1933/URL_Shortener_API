@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Shortened URL</title>
-  <link rel="stylesheet" href="/style.css">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> -->
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shortened URL</title>
+    <link rel="stylesheet" href="/style.css" />
 
-</head>
-<body>
-  <div class="container">
-    <h1>Here's your short URL!</h1>
-    <% if (shortUrl) { %>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Here's your short URL!</h1>
+      <% if (shortUrl) { %>
       <p>Original: <span class="glow-box"><%= longUrl %></span></p>
-      <p>Shortened: <a class="urlgreen" href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a></p>
+      <p>
+        Shortened:
+        <a class="urlgreen" href="<%= shortUrl %>" target="_blank"
+          ><%= shortUrl %></a
+        >
+      </p>
       <div class="url-box">
-        <input type="text" value="<%= shortUrl %>" id="shortUrlInput" readonly>
+        <input
+          type="text"
+          value="<%= shortUrl %>"
+          id="shortUrlInput"
+          readonly
+        />
         <button onclick="copyToClipboard()">Copy</button>
       </div>
-    <% } else { %>
+      <% } else { %>
       <p class="error"><%= error %></p>
-    <% } %>
-    <a class="shorten-another" href="/">Shorten another</a>
-  </div>
-  
+      <% } %>
+      <a class="shorten-another" href="/">Shorten another</a>
+    </div>
 
-<script>
-  function copyToClipboard() {
-    const input = document.getElementById('shortUrlInput');
-    input.select();
-    document.execCommand('copy');
-    alert('Short URL copied to clipboard!');
-  }
-</script>
-
-</body>
+    <script>
+      function copyToClipboard() {
+        const input = document.getElementById("shortUrlInput");
+        input.select();
+        document.execCommand("copy");
+        alert("Short URL copied to clipboard!");
+      }
+    </script>
+  </body>
 </html>

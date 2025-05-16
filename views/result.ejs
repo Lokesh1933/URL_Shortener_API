@@ -13,7 +13,7 @@
     <h1>Here's your short URL!</h1>
     <% if (shortUrl) { %>
       <p>Original: <%= longUrl %></p>
-      <p>Shortened: <a href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a></p>
+      <p>Shortened: <a class="url" href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a></p>
       <div class="url-box">
         <input type="text" value="<%= shortUrl %>" id="shortUrlInput" readonly>
         <button onclick="copyToClipboard()">Copy</button>
@@ -21,10 +21,9 @@
     <% } else { %>
       <p class="error"><%= error %></p>
     <% } %>
-    <a href="/">Shorten another</a>
+    <a class="shorten-another" href="/">Shorten another</a>
   </div>
-  <input type="text" value="<%= shortUrl %>" id="shortUrlInput" readonly>
-  <button onclick="copyToClipboard()">Copy</button>
+  
 
 <script>
   function copyToClipboard() {

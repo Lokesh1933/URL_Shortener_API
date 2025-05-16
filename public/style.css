@@ -16,6 +16,8 @@ body {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 15px #7fdbff;
+  width: 600px;      /* or use % like 80% */
+  height: 300px; 
 }
 
 input[type="url"] {

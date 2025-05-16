@@ -1,0 +1,91 @@
+body {
+  background-color: #001f3f;
+  color: #7fdbff;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-family: 'Poppins',sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: #003366;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #7fdbff;
+}
+
+input[type="url"] {
+  padding: 10px;
+  width: 60%;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #7fdbff;
+  color: #001f3f;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+a {
+  color: #7fdbff;
+  text-decoration: none;
+}
+
+.error {
+  color: red;
+}
+.doc-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #00cccc;
+  color: #001f3f;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.doc-button:hover {
+  background-color: #00e6e6;
+}
+h1 {
+  font-weight: 600;
+  color: #00ffff;
+}
+
+button, input, .doc-button {
+  font-family: 'Poppins', sans-serif;
+  
+}
+/* button:hover {
+  font-weight: bold;
+} */
+.card {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+button:hover,
+.doc-button:hover {
+  background-color: #00ffff;
+  color: #002b5c;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+

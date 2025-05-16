@@ -19,12 +19,12 @@ body {
   width: 600px;      /* or use % like 80% */
   height: 300px; 
 }
-.url {
+.urlgreen {
   color: #39ff14; /* Bright neon green */
   font-weight: 600;
   text-decoration: none;
 }
-.url:hover {
+.urlgreen:hover {
   text-decoration: underline;
 }
 
@@ -108,11 +108,22 @@ h1 {
   font-weight: 600;
   color: #00ffff;
 }
+.glow-box {
+  background-color: rgba(0, 255, 255, 0.12); /* subtle cyan background */
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #00ffff;
+  font-weight: 600;
+  user-select: all;
+}
+
+
 
 button, input, .doc-button {
   font-family: 'Poppins', sans-serif;
   
 }
+
 /* button:hover {
   font-weight: bold;
 } */

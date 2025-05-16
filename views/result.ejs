@@ -12,8 +12,8 @@
   <div class="container">
     <h1>Here's your short URL!</h1>
     <% if (shortUrl) { %>
-      <p>Original: <%= longUrl %></p>
-      <p>Shortened: <a class="url" href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a></p>
+      <p>Original: <span class="glow-box"><%= longUrl %></span></p>
+      <p>Shortened: <a class="urlgreen" href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a></p>
       <div class="url-box">
         <input type="text" value="<%= shortUrl %>" id="shortUrlInput" readonly>
         <button onclick="copyToClipboard()">Copy</button>
